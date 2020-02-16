@@ -1,0 +1,45 @@
+{
+  "name": "EthSupport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node ./ethereum/compile.js",
+    "deploy-contract": "node ./ethereum/deploy.js",
+    "deploy-heroku": "heroku container:push web --app ethsupport",
+    "release": "heroku container:release web --app ethsupport",
+    "logs": "heroku logs --app ethsupport",
+    "test": "NODE_ENV=test jest --watchAll",
+    "dev": "NODE_ENV=development node index.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node index.js",
+    "precommit": "pretty-quick --staged"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "8.10.0"
+},
+  "author": "Ankit Saxena",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fs-extra": "^6.0.1",
+    "ganache-cli": "^6.1.3",
+    "jest": "^23.1.0",
+    "next": "^6.0.3",
+    "next-routes": "^1.4.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "semantic-ui-react": "^0.81.1",
+    "solc": "^0.4.24",
+    "truffle-hdwallet-provider": "0.0.5",
+    "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "prettier": "^1.13.5",
+    "pretty-quick": "^1.6.0"
+  }
+}
